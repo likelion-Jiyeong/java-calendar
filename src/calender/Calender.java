@@ -3,11 +3,11 @@ package calender;
 import java.util.Scanner;
 
 public class Calender {
-	//배열로 해결하는 방법이 가장 효과적이고 편하다.
-	private static final int[] MAX_DAYS = {31,28,31,30,31,30,31,31,30,31,30,31};
-	public int getMaxDaysOfMonth(int month)
-	{
-		return MAX_DAYS[month-1];
+	// 배열로 해결하는 방법이 가장 효과적이고 편하다.
+	private static final int[] MAX_DAYS = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+	public int getMaxDaysOfMonth(int month) {
+		return MAX_DAYS[month - 1];
 	}
 
 	public void printsampleCalendar() {
@@ -27,18 +27,22 @@ public class Calender {
 		cal.printsampleCalendar();
 		int month;
 		Scanner input = new Scanner(System.in);
-		System.out.println("달을 입력해주세요");
-		month = input.nextInt();
-		System.out.println(month +"월달은 "+cal.getMaxDaysOfMonth(month)+"일 입니다");
-		// if문으로 해결하는 방법
-		/*if (month == 2) {
-			System.out.println(month + "월 달은 28일까지 있습니다.");
-		} else if (month == 4 || month == 6 || month == 9 || month == 11) {
-			System.out.println(month + "월 달은 30까지 있습니다.");
-		} else {
-			System.out.println(month + "월 달은 31까지 있습니다.");
-		}*/
+		System.out.println("몇 번 반복하고 싶으신가요?");
+		int times = input.nextInt();
+		for (int i = 0; i < times; i++) {
 
+			System.out.println("달을 입력해주세요");
+			month = input.nextInt();
+			System.out.println(month + "월달은 " + cal.getMaxDaysOfMonth(month) + "일 입니다");
+			// if문으로 해결하는 방법
+			/*
+			 * if (month == 2) { System.out.println(month + "월 달은 28일까지 있습니다.");
+			 * } else if (month == 4 || month == 6 || month == 9 || month == 11)
+			 * { System.out.println(month + "월 달은 30까지 있습니다."); } else {
+			 * System.out.println(month + "월 달은 31까지 있습니다."); }
+			 */
+
+		}
+		System.out.println("Bye");
 	}
-
 }
