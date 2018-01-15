@@ -23,16 +23,24 @@ public class Calender {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
+		String PROMPT ="cal>";
 		Calender cal = new Calender();
 		cal.printsampleCalendar();
-		int month;
+		int month=0;
 		Scanner input = new Scanner(System.in);
-		System.out.println("몇 번 반복하고 싶으신가요?");
-		int times = input.nextInt();
-		for (int i = 0; i < times; i++) {
+		while(true){
 
 			System.out.println("달을 입력해주세요");
+			System.out.println(PROMPT);
 			month = input.nextInt();
+			if(month==-1) //month가 -1 이면 반복문을 빠져나감
+			{
+				break;
+			}
+			if(month>12||month==0)
+			{
+				continue; //만나면 루프의 처음으로 돌아가서 다시 반복
+			}
 			System.out.println(month + "월달은 " + cal.getMaxDaysOfMonth(month) + "일 입니다");
 			// if문으로 해결하는 방법
 			/*
