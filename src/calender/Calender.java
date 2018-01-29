@@ -10,47 +10,31 @@ public class Calender {
 		return MAX_DAYS[month - 1];
 	}
 
-	public void printsampleCalendar() {
-		System.out.println("월 ,화 ,수 ,목 ,금 , 토 ,일");
-		System.out.println("--------------------");
-		System.out.println("1  2  3  4  5  6  7");
-		System.out.println("8  9  10 11 12 13 14");
-		System.out.println("15 16 17 18 19 20 21 ");
-		System.out.println("22 23 24 25 26 27 28 ");
-
+	public void printCalendar(int year, int month,int date) {
+		System.out.printf("    <<%4d년 %3d월>>\n", year, month);
+		System.out.println("  월   화    수    목    금    토    일");
+		System.out.println(" --------------------");
+		// System.out.println("1 2 3 4 5 6 7");
+		// System.out.println("8 9 10 11 12 13 14");
+		// System.out.println("15 16 17 18 19 20 21 ");
+		// System.out.println("22 23 24 25 26 27 28 ");
+		for (int i = 1; i <= date; i++) {
+			System.out.printf("%3d",i);
+			if (i % 7 == 0) {
+				System.out.println();
+			}
+		}
+		System.out.println();
 	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+
 		// 숫자를 입력받아 해당하는 달의 최대 일수를 출력하는 프로그램
-		String PROMPT ="cal>";
-		Calender cal = new Calender();
-		cal.printsampleCalendar();
-		int month=0;
-		Scanner input = new Scanner(System.in);
-		while(true){
-
-			System.out.println("달을 입력해주세요");
-			System.out.println(PROMPT);
-			month = input.nextInt();
-			if(month==-1) //month가 -1 이면 반복문을 빠져나감
-			{
-				break;
-			}
-			if(month>12||month==0)
-			{
-				continue; //만나면 루프의 처음으로 돌아가서 다시 반복
-			}
-			System.out.println(month + "월달은 " + cal.getMaxDaysOfMonth(month) + "일 입니다");
-			// if문으로 해결하는 방법
-			/*
-			 * if (month == 2) { System.out.println(month + "월 달은 28일까지 있습니다.");
-			 * } else if (month == 4 || month == 6 || month == 9 || month == 11)
-			 * { System.out.println(month + "월 달은 30까지 있습니다."); } else {
-			 * System.out.println(month + "월 달은 31까지 있습니다."); }
-			 */
-
-		}
-		System.out.println("Bye");
+		// 월을 입력하면 해당 월의 달력을 출력한다.!
+		// 달력의 모양은 1단계에서 작성한 모양으로 만든다.
+		// 1일은 1요일로 정해도 무관하다.
+		// -1을 입력받기 전까지 반복 입력받는다.!
+		// 프롬프트를 출력한다.!
 	}
 }
