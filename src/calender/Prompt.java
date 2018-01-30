@@ -4,15 +4,18 @@ import java.util.Scanner;
 
 public class Prompt {
 	
-	private final static String PROMPT="cal >";
+	//private final static String PROMPT="cal >";
 	public void runPrompt(){
 		Calender cal = new Calender();
+		int year =0;
 		int month = 0;
 		Scanner input = new Scanner(System.in);
 		while (true) {
-
+			System.out.println("년을 입력해주세요");
+			System.out.println("Year>");
+			year = input.nextInt();
 			System.out.println("달을 입력해주세요");
-			System.out.println(PROMPT);
+			System.out.println("Month>");
 			month = input.nextInt();
 
 			if (month == -1) // month가 -1 이면 반복문을 빠져나감
@@ -23,7 +26,7 @@ public class Prompt {
 				continue; // 만나면 루프의 처음으로 돌아가서 다시 반복
 			}
 			// 달력함수가 들어 갈 곳
-			cal.printCalendar(2017,month,cal.getMaxDaysOfMonth(month));
+			cal.printCalendar(2017,month,cal.getMaxDaysOfMonth(year,month));
 			
 			//System.out.println(month + "월달은 " + cal.getMaxDaysOfMonth(month) + "일 입니다");
 
